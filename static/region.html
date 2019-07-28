@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/nucleo-glyph.css"/>
+	<script src="jquery-1.9.1.min.js"></script>
+<style type="text/css">
+		#container_SX{
+			border:1px solid #ccc;
+			width: 1050px;
+		}
+		#mainbg_SX{
+			padding: 20px!important;
+			border-radius: 0!important;
+		}
+		
+		.btn {
+	    display: inline-block;
+	    margin-bottom: 0;
+	    font-weight: normal;
+	    text-align: center;
+	    vertical-align: middle;
+	    touch-action: manipulation;
+	    cursor: pointer;
+	    background-image: none;
+	    border: 1px solid transparent;
+	    white-space: nowrap;
+	    padding: 6px 12px;
+	    font-size: 14px;
+	    line-height: 1.42857143;
+	    border-radius: 0;
+	    -webkit-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+	    position: relative;
+    	float: left;
+
+    }
+    .btn-link {
+		    color: #333333;
+		    font-weight: normal;
+		    border-radius: 0;
+		}
+		
+		.btn-link,
+		.btn-link:active,
+		.btn-link.active,
+		.btn-link[disabled],
+		fieldset[disabled] .btn-link {
+		    background-color: transparent;
+		    -webkit-box-shadow: none;
+		    box-shadow: none;
+		}
+		
+		.btn-link,
+		.btn-link:hover,
+		.btn-link:focus,
+		.btn-link:active {
+		    border-color: transparent;
+		}
+		
+		.btn-link:hover,
+		.btn-link:focus {
+		    color: #317ac9;
+		    text-decoration: none;
+		    background-color: transparent;
+		}
+		
+		.btn-link[disabled]:hover,
+		fieldset[disabled] .btn-link:hover,
+		.btn-link[disabled]:focus,
+		fieldset[disabled] .btn-link:focus {
+		    color: #777777;
+		    text-decoration: none;
+		}
+		.btn-group, .btn-group-vertical {
+	    position: relative;
+	    display: inline-block;
+	    vertical-align: middle;
+		}
+		.btn-lg, .btn-group-lg > .btn {
+		    padding: 10px 16px;
+		    font-size: 18px;
+		    line-height: 1.3333333;
+		    border-radius: 0;
+		}
+		.nc-icon-glyph {
+	    display: inline-block;
+	    font: normal normal normal 14px/1 'Nucleo Glyph';
+	    font-size: inherit;
+	    speak: none;
+	    text-transform: none;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+		}
+		.text-warning {
+		    color: #ff9800;
+		}
+		.nc-icon-glyph{
+		    vertical-align: middle;
+		    vertical-align: -9%;
+		    margin-right: 5px;
+		}
+</style>
+</head>
+<body>
+	<div class="btn-group dropdown-hover mt-2 sitemap-201709180104">
+		<button onmouseover="kk();" class="btn btn-link btn-lg" type="button" style="font-size:18px;margin-left: 318px;margin-top:13px;">
+	       <i class="nc-icon-glyph location_pin text-warning"></i>安康市
+	  </button>
+  </div>
+	<div id="ceshi" style="display:none;" class="cs" onmouseleave="leave();">
+		<!--<script>
+			
+//			document.write('<script id="SxLink" src="http://zwfw.shaanxi.gov.cn/icity/project/shanxi/default/public/assets/js/do.js" token="" usertype="" nameCode=""><\/script>')
+		</script>-->
+		<iframe src="regionhtml.html" frameborder="0" style="width: 1050px;height: 300px;"></iframe>
+		<!--<script id="SxLink" src="http://zwfw.shaanxi.gov.cn/icity/project/shanxi/default/public/assets/js/do.js" token="" usertype="" nameCode=""></script>-->
+	</div>
+	<script type="text/javascript">
+		function kk(){		
+			$("#ceshi").css("display","block");
+			$("#iframeF",parent.document).css({'width':'1200px','height':'400px','left':'0'})
+			$("#iframe",parent.document).css({'left':'40px','top':'0px'})
+		};
+		function leave(){
+			$("#ceshi").hide();
+			$("#iframeF",parent.document).css({'width':'100px','height':'60px','left':'370px'})
+			$("#iframe",parent.document).css({'left':'-330px','top':'0px'})
+		}
+		$('a').click(function(){
+			var aValue = this.attributes.onclick.nodeValue
+			var aUrl = aValue.split("'")[5]
+			var aUrlD = aValue.split("'")[1]
+			if(aValue.indexOf('linkToThd') == -1){
+				parent.location.href = aUrlD
+			}else{
+				parent.location.href = aUrl
+			}
+		})
+	</script>
+</body>
+</html>
